@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "three": "^0.168.0",
+    "tr": "^1.1.2",
     "vite": "^5.4.8"
   }
 }

@@ -62,5 +62,11 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(800, 600)
 document.getElementById("scene").appendChild(renderer.domElement);
 
+const animate= () =>{
+  requestAnimationFrame(animate);
+  cylinder.position.x +=0.03;
+  console.log(cylinder.position);
+  renderer.render(scene,camera);
+}
 
 renderer.render(scene, camera)
