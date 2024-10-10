@@ -22,4 +22,4 @@ renderer.setSize(800, 600)
 document.getElementById("scene").appendChild(renderer.domElement);
 
 
-renderer.render(scene, camera)
+renderer.render(scene, camera);

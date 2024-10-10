@@ -36,4 +36,4 @@ const animate = () => {
     renderer.render(scene, camera);
 }
 
-animate();
+animate()

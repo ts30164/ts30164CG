@@ -22,7 +22,7 @@ const fbxLoader = new FBXLoader()
 fbxLoader.load(
     'models/Capoeira.fbx',
     (object) => {
-        object.scale.set(0.02, 0.02, 0.02);
+        object.scale.set(0.03, 0.03, 0.03);
         scene.add(object)
         mixer = new THREE.AnimationMixer(object);
         console.log(object.animations);
@@ -40,5 +40,5 @@ function animate() {
     }
     renderer.render(scene, camera);
 }
-animate();
+animate()
 

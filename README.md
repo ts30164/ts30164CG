@@ -1,7 +1,7 @@
 <h1>Grafika kompjuterike</h1>
 <h2>CCS-601-2024</h1>
 
-<b>Ligjërues:</b> Visar Shehu
+<b>Ligjërues: </b> Visar Shehu 
 
 
 Për të përdorur këtë repozitor, ju duhet që të njëjtin ta klononi në makinën tuaj:
