@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-
 const scene = new THREE.Scene();
 
 const light = new THREE.DirectionalLight(0xFFFFFF, 1);
@@ -37,7 +35,7 @@ const cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
 
 box.position.x = -4;
 sphere.position.x = 4;
-cylinder.position.z = -10;
+cylinder.position.z = 1;
 
 scene.add(cylinder);
 scene.add(box)
@@ -50,23 +48,30 @@ const sizes = {
 }
 
 // Camera
-const camera = new THREE.OrthographicCamera(-10, 10, 10, -10, 0, 100);
+const orthoCamera = new THREE.OrthographicCamera(-10, 10, 10, -10, 0, 100);
 
+const camera = new THREE.PerspectiveCamera(75, 800 / 600);
 camera.position.z = 10;
 camera.position.y = 2;
 scene.add(camera);
-
+scene.add(orthoCamera);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(800, 600)
-document.getElementById("scene").appendChild(renderer.domElement);
+document.getElementById("perspective").appendChild(renderer.domElement);
 
-const controls = new OrbitControls( camera, renderer.domElement );
-controls.enableDamping = true;
-controls.target = cylinder.position;
+const orthoRenderer = new THREE.WebGLRenderer();
+orthoRenderer.setSize(800, 600)
+document.getElementById("orthographic").appendChild(orthoRenderer.domElement);
+
+orthoCamera.position.z = 5;
+orthoRenderer.render(scene, orthoCamera);
+
+
 const animate = () => {
   requestAnimationFrame(animate);
-  controls.update();
+  box.rotation.y += 0.1;
+  console.log(cylinder.position);
   renderer.render(scene, camera);
 }
 
