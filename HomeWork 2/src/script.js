@@ -19,11 +19,11 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Adding ambient and point lights
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
-const overheadLight = new THREE.PointLight(0xffffff, 0.8);
-overheadLight.position.set(0, 5, 0);
+const overheadLight = new THREE.PointLight(0xffffff, 100);
+overheadLight.position.set(0, 10, 10);
 scene.add(overheadLight);
 
 // Creating the classroom cube
